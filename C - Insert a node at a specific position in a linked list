@@ -1,0 +1,68 @@
+/*
+Linked List
+
+Insert a node at a specific position in a linked list
+
+Twitter.com/ihappyk
+*/
+
+#include <iostream>
+#include<cstdio>
+#include<cstdlib>
+using namespace std;
+struct Node
+{
+	int data;
+	Node *next;
+};Node* InsertNth(Node *head, int data, int position)
+{
+
+  Node *temp,*prev=head,*curr;
+  temp = new Node();
+  temp->data = data;
+  temp->next = NULL;
+int i=1;
+  if(head == NULL) return temp;
+  if(position == 0){
+  temp->next= head;
+  return temp;
+  }
+ else{
+   while((prev->next!=NULL)&& (i!=position)){
+   i++;
+   prev=prev->next;
+   }
+   if(i==position){
+   curr = prev->next;
+   prev->next = temp;
+   temp->next = curr;
+
+   }
+   else prev->next=temp;
+   return head;
+ }
+}void Print(Node* head)
+{
+	while(head != NULL)
+	{
+		cout<<head->data;
+		head=head->next;
+	}
+}
+
+int main()
+{
+	int t;
+	cin>>t;
+	    Node *head = NULL;
+		 head = new Node();
+		 head->data = 2;
+		 head->next = NULL;
+	while(t-- >0){
+		int x,n; cin>>x>>n;
+		 head = InsertNth(head,x,n);
+	}
+	 Print(head);
+	   cout<<"\n";
+
+}
