@@ -1,0 +1,9 @@
+/*
+BASH programs.
+Bash Tutorials - A Personalized Echo
+
+Twitter.com/ihappyk
+*/
+
+read name
+echo Welcome $name
