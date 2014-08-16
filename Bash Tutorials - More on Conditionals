@@ -1,0 +1,25 @@
+/*
+BASH programs.
+Bash Tutorials - More on Conditionals
+
+tweet me - twitter.com/ihappyk
+*/
+
+#!/bin/bash
+read num1
+read num2
+read num3
+
+if [ $num1 -eq $num2 ]
+then 
+    if [ $num2 -eq $num3 ]
+    then
+       echo EQUILATERAL
+        
+    else 
+       echo ISOSCELES
+    fi
+ else
+       echo SCALENE
+       
+ fi
